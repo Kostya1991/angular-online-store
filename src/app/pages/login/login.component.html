@@ -1,0 +1,42 @@
+<ng-container
+  *ngIf="{
+    register: register$ | async,
+    error: error$ | async,
+    loader: loader$ | async
+  } as observables"
+>
+  <div class="wrapper">
+    <!-- кнопка - переключатель формы -->
+    <span class="wrapper__action-button" (click)="toggleRegister()">
+      <a class="waves-effect waves-light btn blue darken-2">{{ observables.register ? 'Вход' : 'Регистрация' }}</a>
+    </span>
+    <!-- обертка для карточек -->
+    <div class="wrapper__card" [class.wrapper__card-open]="observables.register">
+      <!-- форма для входа в систему -->
+      <app-login-card
+        class="z-depth-5 front"
+        title="Вход"
+        error="Имя пользователя или пароль введены не верно!"
+        buttonTitle="Войти"
+        prefix="login"
+        [isError]="!!observables.error"
+        [loginForm]="loginForm"
+        (onLogin)="login()"
+      ></app-login-card>
+      <!-- форма для регистрации в системе -->
+      <app-login-card
+        class="z-depth-5 back"
+        title="Регистрация"
+        error="Такой email уже существует!"
+        buttonTitle="Зарегистрироваться"
+        prefix="register"
+        [isError]="!!observables.error"
+        [loginForm]="registrForm"
+        (onRegistr)="registr()"
+      ></app-login-card>
+    </div>
+  </div>
+  <!-- лоадер -->
+  <app-loader *ngIf="observables.loader"></app-loader>
+</ng-container>
+

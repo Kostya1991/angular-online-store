@@ -1,0 +1,29 @@
+<div class="wrapper__card-title">
+  {{ title }}
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="sendForm(prefix)">
+  <div class="row">
+    <div class="input-field col s12">
+      <input formControlName="email" [id]="'email' + prefix" type="text" class="validate">
+      <label [for]="'email' + prefix">Введите email</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input formControlName="password" [id]="'password' + prefix" type="password" class="validate">
+      <label [for]="'password' + prefix">Введите пароль</label>
+    </div>
+  </div>
+  <div class="row wrapper__card-error">
+    <span *ngIf="isError && loginForm.valid">
+      {{ error }}
+    </span>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button [disabled]="loginForm.invalid" class="btn waves-effect waves-light" type="submit" name="action">
+        {{ buttonTitle }} <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </div>
+</form>
