@@ -1,4 +1,4 @@
-const firebaseConfig = {
+export const firebaseConfig: Record<string, string> = {
   apiKey: "AIzaSyC7kNyoHT_XBCUSWozQ6htPmW_6ZJPV4oo",
   authDomain: "online-store-a1bed.firebaseapp.com",
   databaseURL: "https://online-store-a1bed-default-rtdb.europe-west1.firebasedatabase.app",
