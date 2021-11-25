@@ -22,6 +22,6 @@ import { LoaderModule } from 'src/app/uikit/loader/loader.module';
 
     LoginRoutingModule,
     LoaderModule,
-  ]
+  ],
 })
 export class LoginModule { }
