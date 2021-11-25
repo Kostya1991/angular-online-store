@@ -78,7 +78,10 @@ export class LoginComponent {
         this.loginForm.reset();
         this.registrForm.reset();
       },
-      () => this.error$.next(true),
+      () => {
+        this.error$.next(true);
+        this.loaderService.setLoading(false);
+      },
       () => this.loaderService.setLoading(false),
     );
   }
