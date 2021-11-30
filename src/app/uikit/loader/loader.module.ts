@@ -13,4 +13,4 @@ import { LoaderComponent } from './loader.component';
     CommonModule,
   ]
 })
-export class LoaderModule { }
+export class UiLoaderModule { }
