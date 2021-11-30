@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { LoginCardComponent } from './card/login-card.component';
-import { LoaderModule } from 'src/app/uikit/loader/loader.module';
+import { UiLoaderModule } from 'src/app/uikit/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { LoaderModule } from 'src/app/uikit/loader/loader.module';
     HttpClientModule,
 
     LoginRoutingModule,
-    LoaderModule,
+    UiLoaderModule,
   ],
 })
 export class LoginModule { }
